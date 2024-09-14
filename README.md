@@ -186,3 +186,14 @@ Database => MongoDB
 - Delete -> DELETE
 
 - C3q3hs1ixZYA3h5c - password mongodb atlas cluster
+
+# Middlewares
+
+- a function can be used to process incoming requets before they reach there final destination
+- it's something that happens in between your request and the final response in a web application
+
+# middleware functions
+
+- every middleware function will call next(), to move to the next phase
+- next callback function signals the express that the particular middleware function has completed its processing and that its time to move onto the next middleware function or to the route handler in the chain.
+- all middleware functions has access to req, res, next

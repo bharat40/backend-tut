@@ -9,9 +9,15 @@ const PORT = process.env.PORT || 3000;
 const db = require('./db.js')
 
 
+// middleware function
+const logRequest = (req, res, next) => {
+    console.log(`[${new Date().toLocaleString()}] request made to ${req.originalUrl}`);
+    next(); // move to the next phase
+}
 // middlewares
 app.use(cors());
-app.use(bodyParser.json());
+app.use(bodyParser.json()); // req.body
+app.use(logRequest);
 app.use('/person', personRoutes)
 app.use('/menu', menuRoutes)
 
